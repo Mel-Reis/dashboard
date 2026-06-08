@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Menu } from 'lucide-react';
+import { Filter, Menu, Search } from 'lucide-react';
 
 function Header() {
   return (
@@ -23,6 +23,21 @@ function Header() {
           </p>
 
         </div>
+        </div>
+
+        <div className="flex-1 max-w-md mx-8">
+          <div className="relative">
+            <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-gray-300 dark:focus:bg-gray-600  focus:border-transparent transition-all"
+            />
+           {/* Depois ajeito o hover */}`
+            <button className=" absolute right-2 top-1/2 transform -translate-y-1/2 py-1.5 bg-gray-700 dark:bg-gray-750 rounded-3xl hover:bg-gray-700 dark:hover:bg-gray-600">
+              <Filter className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+            </button>
+          </div>
         </div>
       </div>
 
