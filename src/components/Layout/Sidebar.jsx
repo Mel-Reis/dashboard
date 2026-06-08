@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from "../../assets/logo.jpg";import { Zap } from 'lucide-react';
-;
+import logo from "../../assets/logo.jpg";
+
 
 function Sidebar() {
   return (
@@ -12,15 +12,16 @@ function Sidebar() {
       <div className="p-4 border-b border-slate-200/50 dark:border-slate-600/40">
           <div className="flex items-center space-x-3">
              <div>
-               <img src={logo} alt="Logo" className="w-8 h-8 rounded-xl"/>
+               <img src={logo} alt="Logo" className="w-8 h-8 rounded-xl ml-9"/>
              </div>
             
           </div>
 
           {/* depois ajeito o espaçamento dos itens com logo*/}
           <div>
-            <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Dashboard</h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Painel
+            <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-200 ml-2">Dashboard</h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400 ml-8">
+              Painel
             </p>
           </div>
       </div>
