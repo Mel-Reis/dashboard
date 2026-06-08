@@ -7,7 +7,7 @@ function Sidebar() {
   return (
     /* Aqui você pode adicionar os itens do seu sidebar */
 
-    <div className="w-40 h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col">
+    <div className="w-50 h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col">
 
     <div className="p-4 border-b border-slate-200/50 dark:border-slate-600/40">
     <div className="flex items-center space-x-3">
@@ -19,7 +19,7 @@ function Sidebar() {
 
     <div>
       <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-        Dashboard
+        Cobrança
       </h1>
       <p className="text-sm text-gray-500 dark:text-gray-400">
         Painel
