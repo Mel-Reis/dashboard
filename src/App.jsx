@@ -4,6 +4,7 @@ import React from 'react';
 import Sidebar from './components/Layout/Sidebar';
 import Header from './components/Layout/Header';
 import Dashboard from './components/Layout/Dashboard/Dashboard';
+import Usuarios from './components/Pages/Usuarios';
 
 function App() {
   const [sideBarCollapsed, setSideBarCollapsed] = React.useState(false);
@@ -29,7 +30,9 @@ function App() {
           <div className="flex-1 flex flex-col overflow-hidden">
 
             {/* Header */}
-            <Header />
+            <Header onToggleSidebar={() =>
+    setSideBarCollapsed(!sideBarCollapsed)
+  }/>
             <main className="flex-1 p-6 overflow-y-auto">
               {/* Conteúdo principal do dashboard */}
               {/* <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
@@ -39,6 +42,7 @@ function App() {
                {currentPage === "dashboard" && (
                   <Dashboard entries={entries} />
   )}
+              {currentPage === "users" && <Usuarios />}  
             </main>
           </div>
         </div>

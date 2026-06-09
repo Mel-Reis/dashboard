@@ -10,7 +10,7 @@ import {
   X
 } from 'lucide-react';
 
-function Header() {
+function Header({ onToggleSidebar }) {
   const [openModal, setOpenModal] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ function Header() {
         <div className="flex items-center justify-between">
 
           <div className="flex items-center space-x-4">
-            <button className="p-2 text-gray-500 dark:text-gray-400 focus:outline-none hover:bg-gray-500 dark:hover:bg-gray-700 transition-colors">
+            <button className="p-2 text-gray-500 dark:text-gray-400 focus:outline-none hover:bg-gray-500 dark:hover:bg-gray-700 transition-colors" onClick={onToggleSidebar}>
               <Menu className="h-6 w-6" />
             </button>
 
@@ -133,7 +133,7 @@ function Header() {
                   onChange={handleChange}
                   placeholder="Digite o nome"
                   required
-                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:[color-scheme:dark]"
+                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark"
                 />
               </div>
 
@@ -148,7 +148,7 @@ function Header() {
                   value={formData.data}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:[color-scheme:dark]"
+                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark"
                 />
               </div>
 

@@ -22,7 +22,7 @@ const menuItems = [
   {
     id: "users",
     icon: Users,
-    label: "Users",
+    label: "Cadastro",
     active: false,
     submenu: [
       { id: "all-users", label: "Usuários" },
@@ -52,7 +52,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
   };
 
   return (
-    <div className={`w-64 h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col ${collapsed ? 'w-16' : 'w-64'}`}>
+    <div className={` h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col ${collapsed ? 'w-16' : 'w-64'}`}>
 
       {/* logo e texto */}
       <div className="p-4 border-b border-slate-200/50 dark:border-slate-600/40">
@@ -75,7 +75,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
         </div>
       </div>
       
-
+{/* 
       {collapsed && (
         <div className="p-2">
           <button
@@ -89,7 +89,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
             />
           </button>
         </div>
-      )}
+      )} */}
 
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
@@ -110,16 +110,33 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
             <div key={item.id} className="relative">
               <button
                 onClick={handleClick}
-                className={`flex items-center justify-between w-full p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-100 ${currentPage === item.id || item.active ? '  text-white' : 'text-gray-700 dark:text-gray-300'}`}
-              >
+                className={`
+                  flex items-center
+                  ${collapsed ? "justify-center" : "justify-between"}
+                  w-full
+                  p-2
+                  rounded-xl
+                  hover:bg-slate-100
+                  dark:hover:bg-slate-700
+                  transition-all
+                  duration-100
+                  ${
+                    currentPage === item.id 
+                      ? "text-white"
+                      : "text-gray-700 dark:text-gray-300"
+                  }
+                `}
+  >
                 <div className="flex items-center space-x-3">
                   <Icon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-
-                  <span className="text-gray-700 dark:text-gray-300">
-                    {item.label}
-                  </span>
-
-                  {item.badge && (
+                  {/* Texto do item */}
+                  {!collapsed && (
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {item.label}
+                    </span>
+                  )}
+                  {/* Badge (New)*/}
+                  {!collapsed && item.badge && (
                     <span className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                       {item.badge}
                     </span>
@@ -128,9 +145,9 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
                 </div>
 
                   {/* Indicador de submenu - users */}
-                {item.submenu && (
+                {!collapsed && item.submenu && (
                   <ChevronDown
-                    className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${
+                    className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${!collapsed && item.submenu &&
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -138,7 +155,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
               </button>
               
             {/* Submenu suspenso: user e adm - estado open*/}
-            {item.submenu && isOpen && (
+            {!collapsed && item.submenu && isOpen && (
     <div
       className="
         mt-2
@@ -156,7 +173,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
         z-50
       "
     >
-      {item.submenu.map((subItem) => (
+      {!collapsed && item.submenu.map((subItem) => (
         <button
           key={subItem.id}
           onClick={() => onPageChange && onPageChange(subItem.id)}
@@ -186,11 +203,13 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
 
       {/* Footer */}
       <div className="p-4 border-t border-slate-200/50 dark:border-slate-600/40">
+      {!collapsed && (
         <div className="flex items-center justify-center">
           <p className="text-xs text-gray-700 dark:text-gray-300">
             Time de Cobrança
           </p>
         </div>
+      )}
       </div>
 
     </div>
