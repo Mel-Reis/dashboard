@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 
 import React from 'react';
 import Sidebar from './components/Layout/Sidebar';
 import Header from './components/Layout/Header';
+import Dashboard from './components/Layout/Dashboard/Dashboard';
 
 function App() {
   const [sideBarCollapsed, setSideBarCollapsed] = React.useState(false);
@@ -24,9 +26,10 @@ function App() {
             <Header />
             <main className="flex-1 p-6 overflow-y-auto">
               {/* Conteúdo principal do dashboard */}
-              <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                O conteúdo principal do dashboard vai aqui. 
-              </h2>
+              {/* <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                {currentPage === "dashboard" && <Dashboard/>}
+
+              </div> */}
             </main>
           </div>
         </div>

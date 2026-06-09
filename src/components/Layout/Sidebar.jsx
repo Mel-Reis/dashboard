@@ -9,6 +9,7 @@ import {
   ChevronDown,
   Menu
 } from 'lucide-react';
+
 {/* Menu items - declarando*/}
 const menuItems = [
   {
@@ -42,6 +43,7 @@ const menuItems = [
   }
 ];
 
+{/*Sidebar função */}
 function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
   const [openMenu, setOpenMenu] = useState(null);
 
@@ -52,7 +54,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
   return (
     <div className={`w-64 h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col ${collapsed ? 'w-16' : 'w-64'}`}>
 
-      {/* Header - logo e texto */}
+      {/* logo e texto */}
       <div className="p-4 border-b border-slate-200/50 dark:border-slate-600/40">
         <div className="flex items-center space-x-3">
           <img
@@ -104,7 +106,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
           {/* tirei o bg-blue-500 ao clicar */}
           return (
             
-            
+            // Menu de Itens
             <div key={item.id} className="relative">
               <button
                 onClick={handleClick}
