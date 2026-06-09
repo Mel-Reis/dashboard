@@ -8,7 +8,7 @@ import {
   FileText,
   ChevronDown
 } from 'lucide-react';
-
+{/* Menu items - declarando*/}
 const menuItems = [
   {
     id: "dashboard",
@@ -41,7 +41,7 @@ const menuItems = [
   }
 ];
 
-function Sidebar() {
+function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
   const [openMenu, setOpenMenu] = useState(null);
 
   const toggleMenu = (id) => {
@@ -49,9 +49,9 @@ function Sidebar() {
   };
 
   return (
-    <div className="w-64 h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col">
+    <div className={`w-64 h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col ${collapsed ? 'w-16' : 'w-64'}`}>
 
-      {/* Header */}
+      {/* Header - logo e texto */}
       <div className="p-4 border-b border-slate-200/50 dark:border-slate-600/40">
         <div className="flex items-center space-x-3">
           <img
@@ -71,17 +71,41 @@ function Sidebar() {
         </div>
       </div>
 
+      {collapsed && (
+        <div className="p-2">
+          <button
+            onClick={onToggle}
+            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-200"
+          >
+            <ChevronDown
+              className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${
+                collapsed ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+        </div>
+      )}
+
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-        {menuItems.map((item) => {
+          {menuItems.map((item) => {
           const Icon = item.icon;
           const isOpen = openMenu === item.id;
 
+          const handleClick = () => {
+            // toggle submenu if present
+            if (item.submenu) toggleMenu(item.id);
+            if (onPageChange) onPageChange(item.id);
+          };
+
+          {/* tirei o bg-blue-500 ao clicar */}
           return (
+            
+            
             <div key={item.id}>
               <button
-                onClick={() => item.submenu && toggleMenu(item.id)}
-                className="flex items-center justify-between w-full p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-200"
+                onClick={handleClick}
+                className={`flex items-center justify-between w-full p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-100 ${currentPage === item.id || item.active ? '  text-white' : 'text-gray-700 dark:text-gray-300'}`}
               >
                 <div className="flex items-center space-x-3">
                   <Icon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
@@ -95,8 +119,10 @@ function Sidebar() {
                       {item.badge}
                     </span>
                   )}
+                  
                 </div>
 
+                  {/* Indicador de submenu - users */}
                 {item.submenu && (
                   <ChevronDown
                     className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${
@@ -111,6 +137,7 @@ function Sidebar() {
                   {item.submenu.map((subItem) => (
                     <button
                       key={subItem.id}
+                      onClick={() => onPageChange && onPageChange(subItem.id)}
                       className="block w-full text-left py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500"
                     >
                       {subItem.label}
