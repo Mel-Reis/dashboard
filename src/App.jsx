@@ -8,7 +8,13 @@ import Dashboard from './components/Layout/Dashboard/Dashboard';
 function App() {
   const [sideBarCollapsed, setSideBarCollapsed] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState("dashboard");
+  const [entries, setEntries] = React.useState([
+  { nome: "João", valor: 100, data: "2026-06-01" },
+  { nome: "Maria", valor: 200, data: "2026-06-02" },
+  { nome: "João", valor: 150, data: "2026-06-03" },
+]);
   return (
+    
   
       /* Aqui você pode adicionar os componentes do seu dashboard */
 
@@ -30,6 +36,9 @@ function App() {
                 {currentPage === "dashboard" && <Dashboard/>}
 
               </div> */}
+               {currentPage === "dashboard" && (
+                  <Dashboard entries={entries} />
+  )}
             </main>
           </div>
         </div>
