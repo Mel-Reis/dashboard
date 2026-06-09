@@ -6,7 +6,8 @@ import {
   Users,
   Settings,
   FileText,
-  ChevronDown
+  ChevronDown,
+  Menu
 } from 'lucide-react';
 {/* Menu items - declarando*/}
 const menuItems = [
@@ -59,17 +60,19 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
             alt="Logo"
             className="w-8 h-8 rounded-xl"
           />
-
-          <div>
-            <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-              Cobrança
-            </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Painel
-            </p>
-          </div>
+          {!collapsed && (
+            <div>
+              <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                Cobrança
+              </h1>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Painel
+              </p>
+            </div>
+          )}
         </div>
       </div>
+      
 
       {collapsed && (
         <div className="p-2">
@@ -102,7 +105,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
           return (
             
             
-            <div key={item.id}>
+            <div key={item.id} className="relative">
               <button
                 onClick={handleClick}
                 className={`flex items-center justify-between w-full p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-100 ${currentPage === item.id || item.active ? '  text-white' : 'text-gray-700 dark:text-gray-300'}`}
@@ -131,20 +134,49 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
                   />
                 )}
               </button>
-
-              {item.submenu && isOpen && (
-                <div className="ml-8 mt-2 space-y-1 border-l border-slate-200 dark:border-slate-600 pl-3">
-                  {item.submenu.map((subItem) => (
-                    <button
-                      key={subItem.id}
-                      onClick={() => onPageChange && onPageChange(subItem.id)}
-                      className="block w-full text-left py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500"
-                    >
-                      {subItem.label}
-                    </button>
-                  ))}
-                </div>
-              )}
+              
+            {/* Submenu suspenso: user e adm - estado open*/}
+            {item.submenu && isOpen && (
+    <div
+      className="
+        mt-2
+        top-0
+        ml-4
+        w-42
+        bg-white
+        dark:bg-gray-800
+        rounded-xl
+        shadow-xl
+        border
+        border-slate-200
+        dark:border-slate-700
+        p-2
+        z-50
+      "
+    >
+      {item.submenu.map((subItem) => (
+        <button
+          key={subItem.id}
+          onClick={() => onPageChange && onPageChange(subItem.id)}
+          className="
+            w-full
+            text-left
+            px-3
+            py-2
+            rounded-lg
+            text-sm
+            text-gray-700
+            dark:text-gray-300
+            hover:bg-slate-100
+            dark:hover:bg-slate-700
+            transition-colors
+          "
+        >
+          {subItem.label}
+        </button>
+      ))}
+  </div>
+)}
             </div>
           );
         })}
