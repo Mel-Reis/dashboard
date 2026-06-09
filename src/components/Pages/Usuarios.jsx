@@ -68,7 +68,7 @@ function Usuarios() {
             </label>
 
             <select
-              className="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700"
+              className="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-white focus:outline-none focus:right-2 focus:ring-blue-500"
             >
               <option>Administrador</option>
               <option>Supervisor</option>
