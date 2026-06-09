@@ -34,8 +34,8 @@ function Dashboard({ entries = [] }) {
   // Vou deixar aqui temporariamente pra facilitar os testes, 
   // mas o ideal é ter um endpoint pra salvar isso no backend
   
-  const [metaSemanalObjetivo, setMetaSemanalObjetivo] = useState(5000);
-  const [metaMensalObjetivo, setMetaMensalObjetivo] = useState(20000);
+  const [metaSemanalObjetivo, setMetaSemanalObjetivo] = useState(300);
+  const [metaMensalObjetivo, setMetaMensalObjetivo] = useState(1200);
 
   const progressoSemanal = Math.min(
     (metaSemanal / metaSemanalObjetivo) * 100,
@@ -113,14 +113,14 @@ function Dashboard({ entries = [] }) {
         <div className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow">
           <p className="text-gray-500">Meta Semanal</p>
           <h2 className="text-2xl font-bold text-green-500">
-            R$ {metaSemanal.toFixed(2)}
+            R$ {metaSemanalObjetivo.toFixed(2)}
           </h2>
         </div>
 
         <div className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow">
           <p className="text-gray-500">Meta Mensal</p>
           <h2 className="text-2xl font-bold text-blue-500">
-            R$ {metaMensal.toFixed(2)}
+            R$ {metaMensalObjetivo.toFixed(2)}
           </h2>
         </div>
 
