@@ -21,13 +21,21 @@ const [metaMensal, setMetaMensal] = React.useState(120000);
 // Temas
 // Alterna a classe "dark" no elemento <html>
 // permitindo que o Tailwind aplique as classes dark:
-const [darkMode, setDarkMode] = useState(false);
+
+// Recupera o tema salvo no navegador 
+const [darkMode, setDarkMode] = useState(() => {
+  return localStorage.getItem("theme") === "dark";
+});
 useEffect(() => {
   console.log("DarkMode:", darkMode);
 
   document.documentElement.classList.toggle(
     "dark",
     darkMode
+  ); // Set - preferência
+    localStorage.setItem(
+    "theme",
+    darkMode ? "dark" : "light"
   );
 }, [darkMode]);
 
