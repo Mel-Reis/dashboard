@@ -7,7 +7,7 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
-
+// função dashboard
 function Dashboard({ entries = [] }) {
   const today = new Date();
 
@@ -50,7 +50,7 @@ function Dashboard({ entries = [] }) {
     (metaMensal / metaMensalObjetivo) * 100,
     100
   );
-
+// Alerta se atingir a meta
   useEffect(() => {
     if (progressoSemanal >= 100) {
       alert("Meta semanal atingida!");
@@ -60,7 +60,7 @@ function Dashboard({ entries = [] }) {
       alert("Meta mensal atingida!");
     }
   }, [progressoSemanal, progressoMensal]);
-
+// Meta semanal e mensal - declarando
   const chartData = [
     {
       name: "Semana",
@@ -73,7 +73,7 @@ function Dashboard({ entries = [] }) {
       meta: metaMensalObjetivo,
     },
   ];
-
+// Top cobradores
   const topCobradores = Object.values(
     entries.reduce((acc, item) => {
       if (!acc[item.nome]) {
