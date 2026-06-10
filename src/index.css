@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+/*
+|--------------------------------------------------------------------------
+| Dark Mode - Tailwind CSS v4
+|--------------------------------------------------------------------------
+|
+| Cria a variante "dark:" baseada na classe .dark aplicada no <html>.
+|
+| Exemplo:
+| document.documentElement.classList.add("dark");
+|
+| Permite usar:
+| dark:bg-gray-800
+| dark:text-white
+| dark:border-gray-700
+|
+*/
+
+@custom-variant dark (&:where(.dark, .dark *));
