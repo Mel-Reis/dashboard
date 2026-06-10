@@ -61,12 +61,12 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
     <div className={` h-screen bg-white dark:bg-gray-800 shadow-md flex flex-col ${collapsed ? 'w-16' : 'w-64'}`}>
 
       {/* logo e texto */}
-      <div className="p-4 border-b border-slate-200/50 dark:border-slate-600/40">
+      <div className="p-4 border-none border-slate-200/50 dark:border-slate-600/40">
         <div className="flex items-center space-x-3">
           <img
             src={logo}
             alt="Logo"
-            className="w-8 h-8 rounded-xl"
+            className="w-8 h-8 rounded-xl "
           />
           {!collapsed && (
             <div>
@@ -81,21 +81,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
         </div>
       </div>
       
-{/* 
-      {collapsed && (
-        <div className="p-2">
-          <button
-            onClick={onToggle}
-            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-200"
-          >
-            <ChevronDown
-              className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${
-                collapsed ? "rotate-180" : ""
-              }`}
-            />
-          </button>
-        </div>
-      )} */}
+
 
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
