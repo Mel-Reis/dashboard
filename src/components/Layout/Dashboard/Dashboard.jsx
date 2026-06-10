@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import {
   ResponsiveContainer,
   LineChart,
@@ -50,16 +50,16 @@ function Dashboard({ entries = [] }) {
     (metaMensal / metaMensalObjetivo) * 100,
     100
   );
-// Alerta se atingir a meta
-  useEffect(() => {
-    if (progressoSemanal >= 100) {
-      alert("Meta semanal atingida!");
-    }
+// // Alerta se atingir a meta
+//   useEffect(() => {
+//     if (progressoSemanal >= 100) {
+//       alert("Meta semanal atingida!");
+//     }
 
-    if (progressoMensal >= 100) {
-      alert("Meta mensal atingida!");
-    }
-  }, [progressoSemanal, progressoMensal]);
+//     if (progressoMensal >= 100) {
+//       alert("Meta mensal atingida!");
+//     }
+//   }, [progressoSemanal, progressoMensal]);
 // Meta semanal e mensal - declarando
   const chartData = [
     {
