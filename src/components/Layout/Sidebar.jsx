@@ -109,7 +109,7 @@ function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
             if (onPageChange) onPageChange(item.id);
           };
 
-          {/* tirei o bg-blue-500 ao clicar */}
+         
           return (
             
             // Menu de Itens
