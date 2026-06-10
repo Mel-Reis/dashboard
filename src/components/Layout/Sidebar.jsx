@@ -7,7 +7,8 @@ import {
   Settings,
   FileText,
   ChevronDown,
-  Menu
+  Menu,
+  Target
 } from 'lucide-react';
 
 {/* Menu items - declarando*/}
@@ -28,6 +29,11 @@ const menuItems = [
       { id: "all-users", label: "Usuários" },
       { id: "admins", label: "Administradores" }
     ]
+  },
+  {
+  id: "goals",
+  icon: Target,
+  label: "Metas"
   },
   {
     id: "settings",

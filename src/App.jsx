@@ -5,6 +5,7 @@ import Sidebar from './components/Layout/Sidebar';
 import Header from './components/Layout/Header';
 import Dashboard from './components/Layout/Dashboard/Dashboard';
 import Usuarios from './components/Pages/Usuarios';
+import Metas from  "./components/Pages/Metas";
 
 function App() {
   const [sideBarCollapsed, setSideBarCollapsed] = React.useState(false);
@@ -43,6 +44,9 @@ function App() {
                   <Dashboard entries={entries} />
   )}
               {currentPage === "users" && <Usuarios />}  
+              {currentPage === "goals" && (
+    <Metas />
+  )}
             </main>
           </div>
         </div>
