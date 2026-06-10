@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Sidebar from './components/Layout/Sidebar';
 import Header from './components/Layout/Header';
 import Dashboard from './components/Layout/Dashboard/Dashboard';
@@ -15,6 +15,19 @@ function App() {
   { nome: "Maria", valor: 200, data: "2026-06-02" },
   { nome: "João", valor: 150, data: "2026-06-03" },
 ]);
+const [metaSemanal, setMetaSemanal] = React.useState(30000);
+const [metaMensal, setMetaMensal] = React.useState(120000);
+
+// Temas
+const [darkMode, setDarkMode] = useState(false);
+useEffect(() => {
+  if (darkMode) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+}, [darkMode]);
+
   return (
     
   
@@ -33,7 +46,9 @@ function App() {
             {/* Header */}
             <Header onToggleSidebar={() =>
     setSideBarCollapsed(!sideBarCollapsed)
-  }/>
+  }  darkMode={darkMode}
+  setDarkMode={setDarkMode}/>
+  
             <main className="flex-1 p-6 overflow-y-auto">
               {/* Conteúdo principal do dashboard */}
               {/* <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">

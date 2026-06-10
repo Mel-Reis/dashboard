@@ -7,10 +7,11 @@ import {
   Search,
   Settings,
   Sun,
-  X
+  X,
+  Moon
 } from 'lucide-react';
 
-function Header({ onToggleSidebar }) {
+function Header({ onToggleSidebar, darkMode, setDarkMode }) {
   const [openModal, setOpenModal] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -88,9 +89,16 @@ function Header({ onToggleSidebar }) {
               <Plus className="w-4 h-4" />
             </button>
 
-            <button className="p-2 text-gray-500 dark:text-gray-400 focus:outline-none hover:bg-gray-500 dark:hover:bg-gray-700 transition-colors rounded-xl">
-              <Sun className="w-4 h-4" />
-            </button>
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              {darkMode ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-slate-500" />
+              )}
+          </button>
 
             <button className="p-2 text-gray-500 dark:text-gray-400 focus:outline-none hover:bg-gray-500 dark:hover:bg-gray-700 transition-colors rounded-xl">
               <Settings className="w-4 h-4" />
