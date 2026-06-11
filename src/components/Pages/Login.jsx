@@ -31,7 +31,7 @@ function Login({ onLogin }) {
       <select
         value={nome}
         onChange={(e) => setNome(e.target.value)}
-        className="w-full p-3 mb-4 border rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+        className=" p-3 mb-4 border rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
       >
         <option value="">Selecione uma pessoa</option>
 
@@ -47,9 +47,12 @@ function Login({ onLogin }) {
         placeholder="Senha"
         value={senha}
         onChange={(e) => setSenha(e.target.value)}
+        className="p-3  border rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white ml-4"
       />
 
-      <button type="submit">Entrar</button>
+      <button type="submit"className="  rounded-lg bg-blue-500 text-white hover:bg-blue-600 ml-4 px-4 py-2">
+        Entrar
+      </button>
     </form>
   );
 }
