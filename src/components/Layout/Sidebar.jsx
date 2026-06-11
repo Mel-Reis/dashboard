@@ -46,11 +46,18 @@ const menuItems = [
     icon: FileText,
     label: "Documents",
     active: false
-  }
+  },
+  {
+  id: "login",
+  icon: Users,
+  label: "Login"
+},
 ];
 
 {/*Sidebar função */}
-function Sidebar({collapsed, onToggle, currentPage, onPageChange}) {
+function Sidebar({collapsed, onToggle, currentPage, onPageChange , user})
+
+{
   const [openMenu, setOpenMenu] = useState(null);
 
   const toggleMenu = (id) => {
