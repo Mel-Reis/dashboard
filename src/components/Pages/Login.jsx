@@ -12,9 +12,9 @@ function Login({ onLogin }) {
       senha === "123456"
     ) {
       onLogin({
-        nome: "Paloma",
+        nome: "Teste",
         cargo: "Financeiro",
-        email,
+        email:"teste@teste"
       });
     } else {
       alert("Login inválido");

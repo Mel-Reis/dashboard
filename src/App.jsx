@@ -60,12 +60,12 @@ useEffect(() => {
 
             {/* Header */}
            <Header
-  onToggleSidebar={() =>
-    setSideBarCollapsed(!sideBarCollapsed)
-  }
-  darkMode={darkMode}
-  setDarkMode={setDarkMode}
-  user={user}
+              onToggleSidebar={() =>
+                setSideBarCollapsed(!sideBarCollapsed)
+              }
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+              user={user}
 />
   
             <main className="flex-1 p-6 overflow-y-auto">
