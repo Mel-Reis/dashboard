@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react';
 import Sidebar from './components/Layout/Sidebar';
 import Header from './components/Layout/Header';
 import Dashboard from './components/Layout/Dashboard/Dashboard';
-import Usuarios from './components/Pages/Usuarios';
+// import Usuarios from './components/Pages/Usuarios';
 import Metas from  "./components/Pages/Metas";
 import Login from "./components/Pages/Login";
 
@@ -81,7 +81,7 @@ useEffect(() => {
             <Login onLogin={setUser} />
           )}
               {/* Usuarios */}
-              {currentPage === "users" && <Usuarios />}
+              {/* {currentPage === "users" && <Usuarios />} */}
               {/* Metas */}  
               {currentPage === "goals" && (
     <Metas />

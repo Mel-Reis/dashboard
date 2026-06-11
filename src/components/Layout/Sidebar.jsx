@@ -20,16 +20,16 @@ const menuItems = [
     active: true,
     badge: "New"
   },
-  {
-    id: "users",
-    icon: Users,
-    label: "Cadastro",
-    active: false,
-    submenu: [
-      { id: "all-users", label: "Usuários" },
-      { id: "admins", label: "Administradores" }
-    ]
-  },
+  // {
+  //   id: "users",
+  //   icon: Users,
+  //   label: "Cadastro",
+  //   active: false,
+  //   submenu: [
+  //     { id: "all-users", label: "Usuários" },
+  //     { id: "admins", label: "Administradores" }
+  //   ]
+  // },
   {
   id: "goals",
   icon: Target,
@@ -55,7 +55,7 @@ const menuItems = [
 ];
 
 {/*Sidebar função */}
-function Sidebar({collapsed, onToggle, currentPage, onPageChange , user})
+function Sidebar({collapsed, onToggle, currentPage, onPageChange}) 
 
 {
   const [openMenu, setOpenMenu] = useState(null);
