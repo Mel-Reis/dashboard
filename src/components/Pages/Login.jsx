@@ -31,7 +31,7 @@ function Login({ onLogin }) {
       <select
         value={nome}
         onChange={(e) => setNome(e.target.value)}
-        className="p-3  border rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white ml-4"
+        className=" p-3 mb-4 border rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
       >
         <option value="">Selecione uma pessoa</option>
 

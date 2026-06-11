@@ -162,7 +162,7 @@ function Header({onToggleSidebar, darkMode, setDarkMode , user})
                   value={formData.nome}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark"
+                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark focus:outline-none focus:ring-2 focus:ring-blue-500 "
                 >
                   <option value="">Selecione uma pessoa</option>
                   <option value="1">João Silva</option>
@@ -172,7 +172,7 @@ function Header({onToggleSidebar, darkMode, setDarkMode , user})
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 ">
                   Data
                 </label>
 
@@ -182,7 +182,7 @@ function Header({onToggleSidebar, darkMode, setDarkMode , user})
                   value={formData.data}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark"
+                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -199,7 +199,7 @@ function Header({onToggleSidebar, darkMode, setDarkMode , user})
                   onChange={handleChange}
                   placeholder="0.00"
                   required
-                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark"
+                  className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -208,7 +208,7 @@ function Header({onToggleSidebar, darkMode, setDarkMode , user})
                 <button
                   type="button"
                   onClick={() => setOpenModal(false)}
-                  className="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-white transition-colors"
+                  className="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white transition-colors"
                 >
                   Cancelar
                 </button>
