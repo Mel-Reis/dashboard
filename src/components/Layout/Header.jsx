@@ -196,7 +196,7 @@ function Header({onToggleSidebar, darkMode, setDarkMode , user})
                   onChange={handleChange}
                   placeholder="0.00"
                   required
-                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark"
                 />
               </div>
 
