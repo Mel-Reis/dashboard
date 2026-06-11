@@ -157,15 +157,18 @@ function Header({onToggleSidebar, darkMode, setDarkMode , user})
                   Nome
                 </label>
 
-                <input
-                  type="text"
+                <select
                   name="nome"
                   value={formData.nome}
                   onChange={handleChange}
-                  placeholder="Digite o nome"
                   required
                   className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:scheme-dark"
-                />
+                >
+                  <option value="">Selecione uma pessoa</option>
+                  <option value="1">João Silva</option>
+                  <option value="2">Maria Souza</option>
+                  <option value="3">Pedro Santos</option>
+                </select>
               </div>
 
               <div>
