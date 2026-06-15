@@ -1,58 +1,24 @@
-# === Arquivos de Configuração com Senhas ===
+# === Arquivos com Senhas ===
 appsettings.Development.json
 appsettings.Production.json
 .env
-.env.local
-appsettings.json   # Só ignore se você colocar senha aqui também (recomendo não colocar)
+appsettings.json
 
-# === Banco de Dados e Backups ===
-*.sql
-*.bak
-*.db
-*.sqlite
-*.sqlite3
-
-# === .NET Build & Cache ===
+# === .NET ===
 bin/
 obj/
-out/
 *.user
 *.suo
 *.sln.user
-*.rsp
-
-# === Visual Studio / VS Code ===
-.vs/
-.vscode/
-.vscode/*
-!.vscode/extensions.json
-.idea/
 
 # === Front-end ===
 node_modules/
 dist/
-dist-ssr/
-*.local
-coverage/
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# === Outros arquivos sensíveis ===
-secrets.json
-*.pfx
-*.pem
-*.key
-
-# === Mac / Windows temporários ===
+# === Outros ===
+.vscode/
+.vs/
 .DS_Store
-Thumbs.db
-
-# === Logs ===
-logs/
-*.log
-
-# === Pastas temporárias do projeto ===
-temp/
-tmp/
+*.bak
+*.sql
