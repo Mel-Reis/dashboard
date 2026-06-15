@@ -1,0 +1,29 @@
+@repos_HostAddress = http://localhost:5292
+
+### Login
+POST {{repos_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "usuario": "admin",
+  "senha": "gestao123"
+}
+
+### Pegar todas as metas (principal para o dashboard)
+GET {{repos_HostAddress}}/api/metas
+
+### Ranking Top 3
+GET {{repos_HostAddress}}/api/metas/ranking-top3
+
+### Maiores entradas
+GET {{repos_HostAddress}}/api/metas/maiores-entradas
+
+### Colaborador lançar valor (exemplo)
+POST {{repos_HostAddress}}/api/metas/lancar-recuperacao-colaborador
+Content-Type: application/json
+
+{
+  "colaboradorId": 1,
+  "semana": "S1",
+  "valor": 1500
+}
