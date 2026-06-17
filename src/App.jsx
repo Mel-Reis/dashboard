@@ -7,6 +7,7 @@ import Dashboard from './components/Layout/Dashboard/Dashboard';
 // import Usuarios from './components/Pages/Usuarios';
 import Metas from  "./components/Pages/Metas";
 import Login from "./components/Pages/Login";
+import Documents from "./components/Pages/Documents";
 
 function App() {
   const [sideBarCollapsed, setSideBarCollapsed] = React.useState(false);
@@ -87,6 +88,9 @@ useEffect(() => {
     <Metas />
               
   )}
+              {currentPage === "documents" && (
+              <Documents />
+            )}
             </main>
           </div>
         </div>
