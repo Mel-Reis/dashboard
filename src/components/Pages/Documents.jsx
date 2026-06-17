@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Upload, FileText, CheckCircle } from "lucide-react";
-
+{/* Função Documents */}
 function Documents() {
 const [arquivo, setArquivo] = useState(null);
 
@@ -31,7 +31,7 @@ alert(`Documento "${arquivo.name}" anexado com sucesso!`);
 
 return ( <div className="max-w-4xl mx-auto"> <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8">
 
-```
+
     {/* Cabeçalho */}
     <div className="flex items-center gap-3 mb-8">
       <FileText className="w-8 h-8 text-blue-600" />

@@ -71,18 +71,14 @@ useEffect(() => {
   
             <main className="flex-1 p-6 overflow-y-auto">
               {/* Conteúdo principal do dashboard */}
-              {/* <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-                {currentPage === "dashboard" && <Dashboard/>}
-
-              </div> */}
+              
                {currentPage === "dashboard" && (
                   <Dashboard entries={entries} />
   )}
   {currentPage === "login" && (
             <Login onLogin={setUser} />
           )}
-              {/* Usuarios */}
-              {/* {currentPage === "users" && <Usuarios />} */}
+              
               {/* Metas */}  
               {currentPage === "goals" && (
     <Metas />
